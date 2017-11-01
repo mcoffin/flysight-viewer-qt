@@ -26,7 +26,18 @@
   2. Check that `Image Format` is set to `compressed`.
   3. Click Save.
 
-## Ubuntu Linux
+## Linux
+
+To build on linux, the following dependent libraries will be required:
+
+* `libvlc-qt`
+* Qt5 Webkit
+* Qt5
+* [`wwwidgets`](http://www.wysota.eu.org/wwwidgets/#download)
+
+For some distributions, below you'll find instructions for building and installing already set up for you.
+
+### Ubuntu
 
 ```bash
 sudo apt install libqt5webkit5-dev
@@ -65,3 +76,13 @@ INCLUDEPATH += /home/$USER/Qt/5.5/gcc_64/include
 INCLUDEPATH += /home/$USER/Qt/5.5/gcc_64/include/QtCore
 ```
 3. Run `make` again.
+
+### Arch Linux
+
+For arch linux, there is a [`flysight-viewer-qt-git` package](https://aur.archlinux.org/packages/flysight-viewer-qt-git) available on the [Arch User Repository](https://aur.archlinux.org).
+
+If you are using an AUR helper like [`pacaur`](https://aur.archlinux.org/packages/pacaur), building and installing is as simple as the following.
+
+```bash
+MAKEFLAGS="-j$(nproc)" pacaur -S flysight-viewer-qt-git
+```
